@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {# {{ form_widget(form) }} #}
+    {{ form_row(form.judul) }}
+    {{ form_row(form.halaman) }}
+    {{ form_row(form.kategori) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

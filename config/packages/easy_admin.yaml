@@ -1,0 +1,16 @@
+easy_admin:
+   entities:
+      Kategori:
+          class: App\Entity\Kategori
+          edit:
+            fields: ['id', 'nama']
+          new:
+            fields: ['nama']
+      Buku:
+          class: App\Entity\Buku
+          list:
+            fields: ['judul', 'halaman', 'kategori']
+      User:
+          class: App\Entity\User
+          
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Buku{% endblock %}
+
+{% block body %}
+    <h1>Buku</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ buku.id }}</td>
+            </tr>
+            <tr>
+                <th>Judul</th>
+                <td>{{ buku.judul }}</td>
+            </tr>
+            <tr>
+                <th>Halaman</th>
+                <td>{{ buku.halaman }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('buku_index') }}">back to list</a>
+
+    <a href="{{ path('buku_edit', {'id': buku.id}) }}">edit</a>
+
+    {{ include('buku/_delete_form.html.twig') }}
+{% endblock %}

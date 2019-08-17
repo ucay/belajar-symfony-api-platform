@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Kategori{% endblock %}
+
+{% block body %}
+    <h1>Edit Kategori</h1>
+
+    {{ include('kategori/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('kategori_index') }}">back to list</a>
+
+    {{ include('kategori/_delete_form.html.twig') }}
+{% endblock %}

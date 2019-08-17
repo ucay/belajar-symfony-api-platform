@@ -1,0 +1,17 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Error{% endblock %}
+
+{% block body %}
+    <div class="error-box-2 mt-70 mb-50">
+      <div class="clip-text background-center" style="background-image: url(http://via.placeholder.com/432x290);">
+        <h2>{{ status_code }}</h2>
+        <h3>{{ status_text }}</h3>
+      </div> 
+      <h4>{{ exception.message }}</h4>
+      <div class="mt-20 mb-20">
+        <a href="{{ path('homepage') }}" class="dark-button-bordered button-md">Back To Home</a>
+      </div>
+    </div>
+
+{% endblock %}
