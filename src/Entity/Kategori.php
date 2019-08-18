@@ -2,12 +2,26 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiSubresource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\KategoriRepository")
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get",
+ *       "post_publication"={
+ *         "method"="POST",
+ *         "path"="/kategori/{id}/test",
+ *         "controller"=App\Controller\KategoriApiTestController::class,
+ *       }
+ *     },
+ *     routePrefix="/kat",
+ * )
  */
 class Kategori
 {
@@ -20,11 +34,14 @@ class Kategori
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"book"})
      */
     private $nama;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Buku", mappedBy="kategori")
+     * @ApiSubresource
+     * 
      */
     private $daftarbuku;
 
