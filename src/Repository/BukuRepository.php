@@ -22,7 +22,7 @@ class BukuRepository extends ServiceEntityRepository
     // /**
     //  * @return Buku[] Returns an array of Buku objects
     //  */
-    
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('b')
@@ -34,7 +34,6 @@ class BukuRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    
 
     /*
     public function findOneBySomeField($value): ?Buku

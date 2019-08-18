@@ -3,7 +3,6 @@
 namespace App\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Response;
 
 class BukuControllerTest extends WebTestCase
 {
@@ -22,6 +21,5 @@ class BukuControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/buku/new');
 
         $this->assertTrue($client->getResponse()->isRedirect('/login'));
-        
     }
 }
